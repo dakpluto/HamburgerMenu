@@ -56,7 +56,7 @@ public class Hamburger {
         this.toppingLimit = toppingLimit;
     }
 
-    private double totalPrice() {
+    public double totalPrice() {
         double totalPrice = this.price;
         for (Topping topping : toppingList) {
             totalPrice += topping.getPrice();
@@ -65,7 +65,7 @@ public class Hamburger {
         return totalPrice;
     }
 
-    private String displayToppingList() {
+    public String displayToppingList() {
         DecimalFormat df = new DecimalFormat("0.00");
         StringBuilder sb = new StringBuilder().append("Toppings: ");
         for (Topping topping : toppingList) {
