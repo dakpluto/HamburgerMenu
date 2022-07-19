@@ -29,15 +29,35 @@ public class Topping {
         this.price = price;
     }
 
-    public Topping selectTopping(List<Topping> toppingList, boolean healthyOptionCheck) {
-        Scanner scanner = new Scanner(System.in);
-        Topping topping = null;
-        System.out.println("Please select a topping to add to your Hamburger: ");
-        for(int i = 0; i < toppingList.size(); i++) {
-            if(healthyOptionCheck && toppingList.)
-        }
+    public boolean isHealthyOption() {
+        return healthyOption;
+    }
 
-        return topping;
+    public void setHealthyOption(boolean healthyOption) {
+        this.healthyOption = healthyOption;
+    }
+
+    public List<Topping> selectTopping(List<Topping> toppingList, List<Topping> completeToppingList, int toppingLimit) {
+        Scanner scanner = new Scanner(System.in);
+        List<Topping> returnToppingList = toppingList;
+        try {
+            if (toppingList.size() > toppingLimit) {
+                System.out.println("Too many toppings!  You need to remove some.");
+                return toppingList;
+            } else if (toppingList.size() == toppingLimit) {
+                System.out.println("Maximum number of toppings reached.  Unable to add more toppings.");
+                return toppingList;
+            }
+            System.out.println("Please select a topping to add to your Hamburger: ");
+            for (Topping t : completeToppingList) {
+                for(Topping tl : toppingList) {
+                    if(t.healthyOption && )
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Invalid Selection please try again.");
+        }
+        return returnToppingList;
     }
 
     @Override

@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdadd7d3-c1c0-406c-97ee-c3954c218103" name="Changes" comment="7/10 update #2" />
+    <list default="true" id="fdadd7d3-c1c0-406c-97ee-c3954c218103" name="Changes" comment="7/17 update #1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Topping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Topping.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,6 +70,7 @@
       <updated>1657380167023</updated>
       <workItem from="1657380168259" duration="9852000" />
       <workItem from="1657468309551" duration="5094000" />
+      <workItem from="1658053327416" duration="6007000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1657432741139</created>
@@ -89,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657536660213</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="7/17 update #1">
+      <created>1658053416615</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1658053416615</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +121,7 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="7/10 update #1" />
     <MESSAGE value="7/10 update #2" />
-    <option name="LAST_COMMIT_MESSAGE" value="7/10 update #2" />
+    <MESSAGE value="7/17 update #1" />
+    <option name="LAST_COMMIT_MESSAGE" value="7/17 update #1" />
   </component>
 </project>
