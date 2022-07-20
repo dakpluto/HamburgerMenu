@@ -1,4 +1,5 @@
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -37,9 +38,21 @@ public class Topping {
         this.healthyOption = healthyOption;
     }
 
+    public void displayCurrentToppings(List<Topping> toppingList) {
+        DecimalFormat df = new DecimalFormat("0.00");
+        double totalToppings = 0.00;
+
+        System.out.print("Current toppings: ");
+        for (Topping t : toppingList) {
+            System.out.print(t.getName() + " - $" + df.format(t.getPrice()) + " | ");
+            totalToppings += t.getPrice();
+        }
+        System.out.println("\nTotal Topping Price: " + df.format(totalToppings));
+    }
+
     public List<Topping> selectTopping(List<Topping> toppingList, List<Topping> completeToppingList, int toppingLimit) {
         Scanner scanner = new Scanner(System.in);
-        List<Topping> returnToppingList = toppingList;
+        List<Topping> availableToppings = new ArrayList<>();
         try {
             if (toppingList.size() > toppingLimit) {
                 System.out.println("Too many toppings!  You need to remove some.");
@@ -50,14 +63,30 @@ public class Topping {
             }
             System.out.println("Please select a topping to add to your Hamburger: ");
             for (Topping t : completeToppingList) {
-                for(Topping tl : toppingList) {
-                    if(t.healthyOption && )
+                if(t.healthyOption && !(toppingList.contains(t))){
+                    availableToppings.add(t);
                 }
             }
+            for(Topping top : availableToppings){
+                System.out.println(availableToppings.indexOf(top) + ") " + top.getName() + " - $" + top.getPrice());
+            }
+            System.out.print("Selection: ");
+            int toppingInput = scanner.nextInt();
+            if (toppingInput > availableToppings.size() || toppingInput < 1) {
+                System.out.println("Invalid Selection.  Returning to menu.");
+                return toppingList;
+            } else if(toppingList.contains(availableToppings.get((toppingInput - 1)))) {
+                System.out.println(availableToppings.get((toppingInput - 1)).getName() + " is already on your Burger.  Please try again.");
+            }
+            else {
+                toppingList.add(availableToppings.get((toppingInput - 1)));
+                System.out.println(availableToppings.get((toppingInput - 1)).getName() + " added to your burger!");
+                return toppingList;
+            }
         } catch (Exception e) {
-            System.out.println("Invalid Selection please try again.");
+            System.out.println("Invalid Selection. Please try again.");
         }
-        return returnToppingList;
+        return toppingList;
     }
 
     @Override
