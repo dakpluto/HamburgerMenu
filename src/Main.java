@@ -3,8 +3,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Topping testTopping = new Topping("Onions", 0.75);
-        Topping secondTopping = new Topping("Cheese", 0.50);
+        Topping testTopping = new Topping("Onions", 0.75, true);
+        Topping secondTopping = new Topping("Cheese", 0.50, false);
         System.out.println(testTopping);
         Bread testBread = new Bread("White", 0.00);
         System.out.println(testBread);
